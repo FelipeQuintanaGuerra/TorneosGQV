@@ -1,0 +1,217 @@
+/* Titulos formato Pokemon */
+@font-face {
+  font-family: "Pokemon Solid";
+  src: url("fonts/Pokemon Solid.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.pokemon-title {
+  font-family: "Pokemon Solid", Arial, sans-serif;
+  color: #ffcb05; /* Amarillo Pokémon */
+  text-shadow:
+    -3px -3px 0 #3466af,
+    3px -3px 0 #3466af,
+    -3px 3px 0 #3466af,
+    3px 3px 0 #3466af,
+    0px 3px 0 #3466af,
+    3px 0px 0 #3466af,
+    -3px 0px 0 #3466af,
+    0px -3px 0 #3466af;
+  letter-spacing: 3px;
+}
+
+/* Navbar */
+.navbar {
+  min-height: 80px;
+  height: 80px;
+  overflow: hidden;
+  background-color: #c00 !important;
+}
+
+.logo-navbar {
+  max-height: 200px;
+  height: 90%;
+  width: auto;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  color: #ffd600 !important;
+  font-weight: bold;
+  text-shadow:
+    -1px -1px 0 #0057ff,
+    1px -1px 0 #0057ff,
+    -1px 1px 0 #0057ff,
+    1px 1px 0 #0057ff;
+}
+
+/* Botones de la navbar: amarillo, semi grueso, borde azul */
+.nav-pills .nav-link {
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: #ffd600;
+  font-weight: 600;
+  border: none;
+  margin-left: 5px;
+  border-radius: 8px;
+  transition:
+    background 0.2s,
+    color 0.2s;
+  /* Borde azul al texto */
+  text-shadow:
+    -1px -1px 0 #0057ff,
+    1px -1px 0 #0057ff,
+    -1px 1px 0 #0057ff,
+    1px 1px 0 #0057ff;
+}
+
+.nav-pills .nav-link:hover,
+.nav-pills .nav-link.active {
+  background-color: #ff2000 !important;
+  color: #ffd600;
+  text-shadow:
+    -1px -1px 0 #0057ff,
+    1px -1px 0 #0057ff,
+    -1px 1px 0 #0057ff,
+    1px 1px 0 #0057ff;
+}
+
+.error-container {
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+}
+
+.tipo-btn.active {
+  background-color: darkorange;
+  color: white;
+}
+
+/* Cards */
+/* Estadisticas de los usuarios */
+.stat-card {
+  background: #fff;
+  border-radius: 10px;
+  border: red 2px solid;
+  padding: 18px 5px;
+  text-align: center;
+  color: #fff;
+  min-width: 120px;
+  min-height: 80px;
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+.stat-value {
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-shadow:
+    -1px -1px 0 #000000,
+    1px -1px 0 #000000,
+    -1px 1px 0 #000000,
+    1px 1px 0 #000000;
+}
+.stat-label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000;
+  margin-top: 5px;
+}
+
+/* Tipo de torneo */
+.tipo-card {
+  width: 100%;
+  background: #ffffff;
+  color: #333;
+  border: 2px solid transparent;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  padding: 28px 18px 18px 18px;
+  text-align: left;
+  transition:
+    border 0.2s,
+    box-shadow 0.2s,
+    background 0.2s;
+  cursor: pointer;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.tipo-card .tipo-card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.tipo-card .tipo-card-desc {
+  font-size: 1rem;
+  color: #757575;
+  margin-top: auto;
+}
+.tipo-card.selected,
+.tipo-card:focus,
+.tipo-card:hover {
+  border: 2px solid #ff4500; /* naranja fuerte */
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(255, 69, 0, 0.15);
+  outline: none;
+}
+
+.img-tipo-torneo {
+  width: 100%;
+  height: 150px;
+  margin: 8px 0;
+  object-fit: contain;
+  display: block;
+}
+
+.tipo-card:disabled,
+.tipo-card.disabled {
+  pointer-events: none;
+  opacity: 0.7;
+  cursor: not-allowed;
+  box-shadow: none !important;
+  background: #e9ecef !important;
+  color: #888 !important;
+}
+
+.tipo-card:disabled:hover,
+.tipo-card.disabled:hover {
+  background: #e9ecef !important;
+  color: #888 !important;
+  box-shadow: none !important;
+}
+
+/* Quitar bordes verticales de la tabla */
+.table td,
+.table th {
+  border-left: none !important;
+  border-right: none !important;
+}
+
+.bracket-node {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 32px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.bracket-children {
+  display: flex;
+  gap: 24px;
+}
+
+.match {
+  background: #23242a;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-weight: bold;
+  min-width: 160px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}

@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Ejemplo de obligatorio para FIS ORT 2023."
+    />
+    <title>EntregaFIS-TorneosGQV</title>
+    <link rel="icon" href="./favicon.ico" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+
+  <body class="bg-white text-dark">
+    <nav class="navbar navbar-expand bg-black">
+      <a class="navbar-brand ps-1" href="#">
+        <img src="img/GQV_logo.png" alt="LogoPagina" class="logo-navbar" />
+      </a>
+      <div class="ms-auto d-flex nav nav-pills" id="nav-tab" role="tablist">
+        <a href="index.html" class="nav-link mx-1">Crear torneo</a>
+        <a href="torneos.html" class="nav-link mx-1">Torneos</a>
+        <a href="ranking.html" class="nav-link mx-1">Ranking</a>
+      </div>
+    </nav>
+
+    <main class="container mt-5 text-dark">
+      <h1 class="text-center mb-4 pokemon-title">Crear torneos</h1>
+
+      <div class="row">
+        <h2 class="mb-3">Detalles del Torneo</h2>
+
+        <!-- Nombre del Torneo -->
+        <div class="mb-3">
+          <label class="form-label" for="nombreTorneo">Nombre del Torneo</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombreTorneo"
+            placeholder="Ej: Copa ORT 2025"
+          />
+        </div>
+
+        <!-- Descripción del Torneo -->
+        <div class="mb-3">
+          <label class="form-label" for="descripcionTorneo"
+            >Descripción del Torneo</label
+          >
+          <textarea
+            class="form-control"
+            id="descripcionTorneo"
+            rows="3"
+            placeholder="Ingresá una breve descripción"
+          ></textarea>
+        </div>
+
+        <!-- Tipo de Torneo -->
+        <div class="row g-3 my-4" id="tipo-torneo-cards">
+          <label class="form-label" for="FormatoCards">Tipo de Torneo</label>
+          <div id="FormatoCards" class="col-md-3">
+            <button
+              type="button"
+              class="tipo-card"
+              onclick="setTipo('SE', this)"
+              data-tipo="SE"
+            >
+              <div class="tipo-card-title">Single Elimination</div>
+              <div class="tipo-card-img">
+                <img
+                  src="img/single_elimination.png"
+                  alt="IMGSingle_Elimination"
+                  class="img-tipo-torneo"
+                />
+              </div>
+              <div class="tipo-card-desc">
+                Los perdedores de cada partida serán eliminados del torneo.
+              </div>
+            </button>
+          </div>
+          <div class="col-md-3">
+            <button
+              type="button"
+              class="tipo-card"
+              onclick="setTipo('RR', this)"
+              data-tipo="RR"
+            >
+              <div class="tipo-card-title">Round Robin</div>
+              <div class="tipo-card-img">
+                <img
+                  src="img/round_robin.jpg"
+                  alt="IMGRound_Robin"
+                  class="img-tipo-torneo"
+                />
+              </div>
+              <div class="tipo-card-desc">
+                Cada jugador se enfrenta una vez a todos los demás jugadores.
+              </div>
+            </button>
+          </div>
+          <div class="col-md-3">
+            <button
+              type="button"
+              class="tipo-card"
+              onclick="setTipo('DE', this)"
+              disabled
+            >
+              <div class="watermark">Próximamente...</div>
+              <div class="tipo-card-title">Double Elimination</div>
+              <div class="tipo-card-img">
+                <img
+                  src="img/double_elimination.jpg"
+                  alt="IMGDouble_Elimination"
+                  class="img-tipo-torneo"
+                />
+              </div>
+              <div class="tipo-card-desc">
+                Los jugadores eliminados tienen una segunda oportunidad.
+              </div>
+            </button>
+          </div>
+          <div class="col-md-3">
+            <button
+              type="button"
+              class="tipo-card"
+              onclick="setTipo('SS', this)"
+              disabled
+            >
+              <div class="watermark">Próximamente...</div>
+              <div class="tipo-card-title">Swiss Stage</div>
+              <div class="tipo-card-img">
+                <img
+                  src="img/swiss_stage.png"
+                  alt="IMGSWISS_Stage"
+                  class="img-tipo-torneo"
+                />
+              </div>
+              <div class="tipo-card-desc">
+                Los jugadores enfrentan otros jugadores con los mismos
+                resultados, ganando 3 partidos pasan de ronda y perdiendo 3
+                partidos quedan eliminados. La siguiente ronda es un torneo de
+                single elimination.
+              </div>
+            </button>
+          </div>
+        </div>
+        <!-- Fin Tipo de Torneo -->
+
+        <div class="row">
+          <!-- Fecha del Torneo -->
+          <div class="mb-3 col-md-6">
+            <label class="form-label" for="fechaTorneo">Fecha del Torneo</label>
+            <input type="date" class="form-control" id="fechaTorneo" />
+          </div>
+
+          <!-- Hora del Torneo -->
+          <div class="mb-3 col-md-6">
+            <label class="form-label" for="horaTorneo">Hora del Torneo</label>
+            <input type="time" class="form-control" id="horaTorneo" />
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Es publico -->
+          <div class="mb-3 col-md-6">
+            <label class="form.check-label" for="esPublico"
+              >Torneo publico</label
+            >
+            <div class="d-flex gap-3">
+              <div class="form-check">
+                <label class="form-check-label" for="publicoSi">Sí</label>
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  id="publicoSi"
+                  name="publico"
+                />
+              </div>
+              <div class="form-check">
+                <label class="form-check-label" for="publicoNo">No</label>
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  id="publicoNo"
+                  name="publico"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Limite de participantes -->
+          <div class="mb-3 col-md-6">
+            <label class="form-label" for="limiteParticipantes"
+              >Limite de participantes</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              min="2"
+              id="limiteParticipantes"
+            />
+          </div>
+        </div>
+
+        <!-- Participantes -->
+        <div class="mb-3">
+          <label class="form-label" for="participantes">Participantes</label>
+          <textarea
+            class="form-control"
+            id="participantes"
+            rows="5"
+            placeholder="Ingresá un nombre por línea"
+          ></textarea>
+        </div>
+        <button
+          class="btn btn-warning w-100"
+          id="crearTorneo"
+          onclick="crearTorneo()"
+        >
+          Crear Torneo
+        </button>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
