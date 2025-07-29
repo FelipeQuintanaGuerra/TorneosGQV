@@ -245,6 +245,8 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   //fin crear torneo
 
+
+  // Mover a torneo.js
   function crearBracketSE(usuarios) {
     let total = usuarios.length;
     let nextPow2 = 1;
@@ -289,7 +291,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     return rondas;
   }
-
+ // Mover a torneo.js
   function crearBracketRR(usuarios) {
     const cantUsuarios = usuarios.length;
     const tablaPartidos = [];
